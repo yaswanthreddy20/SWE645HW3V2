@@ -11,7 +11,7 @@ import { SurveyService } from '../survey.service';
 export class CreateSurveyComponent implements OnInit {
   survey: Survey = new Survey();
   submitted = false;
-  thingsLiked!: string[];
+  thingsLiked:string[]=[];
   constructor(private surveyService: SurveyService,
   private router: Router) { }
   ngOnInit(): void {
@@ -28,6 +28,7 @@ export class CreateSurveyComponent implements OnInit {
     
   }
   onSubmit() {
+    console.log(this.survey);
     this.survey.likedAboutCampus = this.thingsLiked.join();
     this.submitted = true;
     this.save();    
@@ -38,9 +39,9 @@ export class CreateSurveyComponent implements OnInit {
   }
  
 
-  onCheckboxChange(event: { target: { checked: any; }; }, value:string) {
+  onCheckboxChange(event:any, value:string) {
     if (event.target.checked) {
-
+      console.log(value);
       this.thingsLiked.push(value);
     } 
     if (!event.target.checked) {

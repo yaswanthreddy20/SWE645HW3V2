@@ -3,6 +3,7 @@ package com.hw3.studentsurvey.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,12 +19,14 @@ public class FormController {
 	private FormService formService;
 	  
     // Save operation
+	@CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/new-survey")
     public StudentSurveyForm saveSurvey( @RequestBody StudentSurveyForm survey)
     {
         return formService.saveSurvey(survey);
     } 
     // Read operation
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/surveys")
     public List<StudentSurveyForm> fetchSurveyList()
     {

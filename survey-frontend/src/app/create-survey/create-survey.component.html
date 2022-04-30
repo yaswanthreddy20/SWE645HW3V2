@@ -1,4 +1,5 @@
-<h2>Create a new survey Form</h2>
+<div class="col-md-8 offset-md-3">
+<h2>Student Survey form</h2>
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()" autocomplete="on">
     <div class="form-group">
@@ -12,44 +13,44 @@
       </div>
 
       <div class="form-group">
-        <label for="address">address</label>
+        <label for="address">Street Address</label>
         <input type="text" class="form-control" id="address" required [(ngModel)]="survey.streetAddress" name="streetAddress">
       </div>
 
       <div class="form-group">
-        <label for="city">city</label>
+        <label for="city">City</label>
         <input type="text" class="form-control" id="city" required [(ngModel)]="survey.city" name="city">
       </div>
 
       <div class="form-group">
-        <label for="state">state</label>
+        <label for="state">State</label>
         <input type="text" class="form-control" id="state" required [(ngModel)]="survey.state" name="state">
       </div>
 
       <div class="form-group">
-        <label for="zip">zip</label>
+        <label for="zip">Zip Code</label>
         <input type="text" class="form-control" id="zip" required [(ngModel)]="survey.zipCode" name="zipCode">
       </div>
 
       <div class="form-group">
-        <label for="tel">tel</label>
+        <label for="tel">Telephone Number</label>
         <input type="text" class="form-control" id="tel" required [(ngModel)]="survey.telephoneNumber" name="telephoneNumber">
       </div>
 
       
       <div class="form-group">
-        <label for="emailId">emailId</label>
+        <label for="emailId">Email Id</label>
         <input type="email" class="form-control" id="emailId" required [(ngModel)]="survey.email" name="email">
       </div>
 
 
       <div class="form-group">
-        <label for="sdate">Submission date</label>
+        <label for="sdate">Date of Survey</label>
         <input type="date" class="form-control" id="sdate" required [(ngModel)]="survey.dateOfSurvey" name="dateOfSurvey">
       </div>
      
       <div class="mb-3">
-        <label>what did you liked most about the campus? (Check all that apply) </label>
+        <label>what did you liked most about the campus? <small>(Check all that apply)</small> </label>
         <div class="form-check">
         <input class="form-check-input" type="checkbox" name="thingsliked"
        value="student" id="defaultCheck1" (change)="onCheckboxChange($event, 'Students')">
@@ -106,6 +107,7 @@
     <option value="Likely">Likely</option>
     <option value="Unlikely">Unlikely</option>
      </select>
+     <br>
     </div>
         
     <button type="submit" class="btn btn-success">Submit</button><span>   .  </span>
@@ -119,3 +121,5 @@
   <h4>You submitted successfully!</h4>
  <button class="btn btn-success" (click)="gotoList()">check in the submitted form list</button> 
 </div>
+
+</div> 
