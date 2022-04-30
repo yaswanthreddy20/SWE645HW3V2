@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: swe645hw3_backend
+spec:
+  selector:
+    app: swe645hw3_backend
+    tier: backend
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: http

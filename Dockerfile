@@ -7,6 +7,6 @@ RUN mvn -f /home/app/pom.xml clean package
 # Package stage
 #
 FROM openjdk:17-slim
-COPY --from=build /home/app/target/studentsurvey-0.0.1-SNAPSHOT.jar /usr/local/lib/studentsurvey.jar
+COPY --from=build /home/app/target/swe645hw3-0.0.1-SNAPSHOT.jar /usr/local/lib/swe645hw3.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/usr/local/lib/studentsurvey.jar"]
+ENTRYPOINT ["java","-jar","/usr/local/lib/swe645hw3.jar"]
