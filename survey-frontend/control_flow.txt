@@ -1,0 +1,4 @@
+main.ts -> control first comes here, it then calls AppModule
+app.module.ts -> starts AppComponent (contains all components)
+app.component.ts -> has the things to render (title) which is rendered inside app.component.html template
+app-routing.module.ts -> we configure routing here

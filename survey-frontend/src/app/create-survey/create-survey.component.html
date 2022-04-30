@@ -1,0 +1,121 @@
+<h2>Create a new survey Form</h2>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()" autocomplete="on">
+    <div class="form-group">
+      <label for="name">First Name</label>
+      <input type="text" class="form-control" id="firstName" required [(ngModel)]="survey.firstName" name="firstName">
+    </div>
+
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" required [(ngModel)]="survey.lastName" name="lastName">
+      </div>
+
+      <div class="form-group">
+        <label for="address">address</label>
+        <input type="text" class="form-control" id="address" required [(ngModel)]="survey.streetAddress" name="streetAddress">
+      </div>
+
+      <div class="form-group">
+        <label for="city">city</label>
+        <input type="text" class="form-control" id="city" required [(ngModel)]="survey.city" name="city">
+      </div>
+
+      <div class="form-group">
+        <label for="state">state</label>
+        <input type="text" class="form-control" id="state" required [(ngModel)]="survey.state" name="state">
+      </div>
+
+      <div class="form-group">
+        <label for="zip">zip</label>
+        <input type="text" class="form-control" id="zip" required [(ngModel)]="survey.zipCode" name="zipCode">
+      </div>
+
+      <div class="form-group">
+        <label for="tel">tel</label>
+        <input type="text" class="form-control" id="tel" required [(ngModel)]="survey.telephoneNumber" name="telephoneNumber">
+      </div>
+
+      
+      <div class="form-group">
+        <label for="emailId">emailId</label>
+        <input type="email" class="form-control" id="emailId" required [(ngModel)]="survey.email" name="email">
+      </div>
+
+
+      <div class="form-group">
+        <label for="sdate">Submission date</label>
+        <input type="date" class="form-control" id="sdate" required [(ngModel)]="survey.dateOfSurvey" name="dateOfSurvey">
+      </div>
+     
+      <div class="mb-3">
+        <label>what did you liked most about the campus? (Check all that apply) </label>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="thingsliked"
+       value="student" id="defaultCheck1" (change)="onCheckboxChange($event, 'Students')">
+        <label class="form-check-label">Students
+        </label>
+        </div>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="thingsliked"
+       value="location" id="defaultCheck1" (change)="onCheckboxChange($event, 'Location')">
+       <label class="form-check-label">Location
+        </label>
+        </div>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox"name="thingsliked"
+       value="campus" id="defaultCheck1" (change)="onCheckboxChange($event, 'Campus')">
+        <label class="form-check-label">Campus</label>
+        </div>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="thingsliked"
+       value="atmosphere "id="defaultCheck1" (change)="onCheckboxChange($event, 'Atmosphere')">
+        <label class="form-check-label">Atmosphere</label>
+        </div>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="thingsliked" value="dorm room" id="defaultCheck1" 
+        (change)="onCheckboxChange($event, 'Dorm Rooms')">
+        <label class="form-check-label">Dorm Rooms</label>
+        </div>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="thingsliked"
+       value="sports" id="defaultCheck1" (change)="onCheckboxChange($event, 'Sports')">
+        <label class="form-check-label">Sports</label>
+        </div>
+        </div>
+    <div class="mb-3">
+        <label> How did you developed interest in this University? </label>
+        <div class="radio">
+        <label><input type="radio" name="interest" value="Friends" [(ngModel)]="survey.likedAboutCampus">Friends</label>
+        </div>
+        <div class="radio">
+        <label><input type="radio" name="interest" value="Television" [(ngModel)]="survey.likedAboutCampus">Television</label>
+        </div>
+        <div class="radio">
+        <label><input type="radio" name="interest" value="Internet" [(ngModel)]="survey.likedAboutCampus">Internet</label>
+        </div>
+        <div class="radio">
+        <label><input type="radio" name="interest" value="Other" [(ngModel)]="survey.likedAboutCampus">Other</label>
+        </div>
+    </div>
+    
+    <div class="form-group">
+    <label for="month">likelihood of you recommending this school to other prospective students.</label>
+    <select class="form-control" id="recommend" [(ngModel)]="survey.recommend" name ="recommend" >
+    <option value="Very Likely">Very Likely</option>
+    <option value="Likely">Likely</option>
+    <option value="Unlikely">Unlikely</option>
+     </select>
+    </div>
+        
+    <button type="submit" class="btn btn-success">Submit</button><span>   .  </span>
+    <button type="cancel" class="btn btn-success">Cancel</button>
+  </form>
+</div>
+<br>
+<br>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+ <button class="btn btn-success" (click)="gotoList()">check in the submitted form list</button> 
+</div>
