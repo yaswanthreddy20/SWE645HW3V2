@@ -37,6 +37,9 @@ export class CreateSurveyComponent implements OnInit {
   gotoList() {
         this.router.navigate(['/surveys']);
   }
+  goHome() {
+    this.router.navigate(['/']);
+}
  
 
   onCheckboxChange(event:any, value:string) {

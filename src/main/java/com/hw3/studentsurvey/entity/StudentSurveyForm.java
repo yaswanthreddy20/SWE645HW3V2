@@ -1,16 +1,20 @@
 package com.hw3.studentsurvey.entity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 @Entity
 @Table(name = "survey_form_data")
 public class StudentSurveyForm {
+	private static final Logger LOGGER = Logger.getLogger( StudentSurveyForm.class.getName());
     @Id
     @GeneratedValue
     private int id;
@@ -75,8 +79,12 @@ public class StudentSurveyForm {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getDateOfSurvey() {
-		return dateOfSurvey;
+	public String getDateOfSurvey() throws ParseException {
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		String d =  formatter.format(dateOfSurvey);
+		System.out.println(d);
+        LOGGER.log(Level.INFO, d);
+		return d;
 	}
 	public void setDateOfSurvey(Date dateOfSurvey) {
 		this.dateOfSurvey = dateOfSurvey;

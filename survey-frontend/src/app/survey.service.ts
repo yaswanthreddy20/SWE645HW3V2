@@ -7,8 +7,8 @@ import { Survey } from './survey';
   providedIn: 'root'
 })
 export class SurveyService {
-  private baseUrl="http://localhost:8080/surveys";
-  private baseUrl2="http://localhost:8080/new-survey";
+  private baseUrl="http://34.121.35.110:8080/surveys";
+  private baseUrl2="http://34.121.35.110:8080/new-survey";
 
   constructor(private httpClient: HttpClient) { }
   getSurveysList(): Observable<Survey[]>{

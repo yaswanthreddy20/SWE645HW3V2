@@ -7,7 +7,7 @@ import { SurveyListComponent } from './survey-list/survey-list.component';
 const routes: Routes = [
   {path: 'surveys',component:SurveyListComponent},
  // {path:'',redirectTo:'',pathMatch:'full'},
-  {path:' ',component:HomeComponent},
+  {path:'',component:HomeComponent},
   {path:'create-survey',component:CreateSurveyComponent},
 ];
 

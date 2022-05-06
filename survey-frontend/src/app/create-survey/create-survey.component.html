@@ -87,16 +87,16 @@
     <div class="mb-3">
         <label> How did you developed interest in this University? </label>
         <div class="radio">
-        <label><input type="radio" name="interest" value="Friends" [(ngModel)]="survey.likedAboutCampus">Friends</label>
+        <label><input type="radio" name="interest" value="Friends" [(ngModel)]="survey.heardFrom">Friends</label>
         </div>
         <div class="radio">
-        <label><input type="radio" name="interest" value="Television" [(ngModel)]="survey.likedAboutCampus">Television</label>
+        <label><input type="radio" name="interest" value="Television" [(ngModel)]="survey.heardFrom">Television</label>
         </div>
         <div class="radio">
-        <label><input type="radio" name="interest" value="Internet" [(ngModel)]="survey.likedAboutCampus">Internet</label>
+        <label><input type="radio" name="interest" value="Internet" [(ngModel)]="survey.heardFrom">Internet</label>
         </div>
         <div class="radio">
-        <label><input type="radio" name="interest" value="Other" [(ngModel)]="survey.likedAboutCampus">Other</label>
+        <label><input type="radio" name="interest" value="Other" [(ngModel)]="survey.heardFrom">Other</label>
         </div>
     </div>
     
@@ -118,8 +118,9 @@
 <br>
 
 <div [hidden]="!submitted">
-  <h4>You submitted successfully!</h4>
- <button class="btn btn-success" (click)="gotoList()">check in the submitted form list</button> 
+  <h4>Your Survey submitted successfully!</h4>
+ <button class="btn btn-success" (click)="gotoList()">List of Surveys</button> 
+ <button class="btn btn-success" (click)="goHome()">Home</button> 
 </div>
 
 </div> 
