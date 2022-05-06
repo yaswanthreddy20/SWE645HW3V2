@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hw3-frontend
+  labels:
+    name: hw3-frontend
+spec:
+  ports:
+    - port: 4200
+      targetPort: 4200
+      protocol: TCP
+  selector:
+    app: hw3-frontend
+  type: LoadBalancer
