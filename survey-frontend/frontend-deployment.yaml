@@ -16,4 +16,4 @@ spec:
         - name: hw3-frontend
           image: 'gcr.io/my-project-1488083585442/hw3_frontend'
           ports:
-            - containerPort: 4200
+            - containerPort: 80

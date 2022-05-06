@@ -6,8 +6,8 @@ metadata:
     name: hw3-frontend
 spec:
   ports:
-    - port: 4200
-      targetPort: 4200
+    - port: 80
+      targetPort: 80
       protocol: TCP
   selector:
     app: hw3-frontend
