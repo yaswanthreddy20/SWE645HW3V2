@@ -19,14 +19,14 @@ public class FormController {
 	private FormService formService;
 	  
     // Save operation
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "*")
     @PostMapping("/new-survey")
     public StudentSurveyForm saveSurvey( @RequestBody StudentSurveyForm survey)
     {
         return formService.saveSurvey(survey);
     } 
     // Read operation
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     @GetMapping("/surveys")
     public List<StudentSurveyForm> fetchSurveyList()
     {
