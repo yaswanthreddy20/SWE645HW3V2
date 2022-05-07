@@ -5,16 +5,11 @@
 - We developed GET, and POST APIs to list the filled surveys and submit a new survey.
 - In Amazon RDS, we created a Database and used its endpoint in the properties file inside the spring boot application as below:
 
-spring.datasource.url = jdbc:mysql://hw3db.cnywyjwwztqn.us-east-1.rds.amazonaws.com:3306/studentsurveydata
+spring.datasource.url = jdbc:mysql://#####:3306/studentsurveydata
 
 spring.datasource.username = admin
 
-spring.datasource.password = admin1234
-
-![](Aspose.Words.cd5b4e64-da50-41e1-a8a5-ac3317a9f552.001.png)
-
-
-
+spring.datasource.password = #####
 
 - We have segregated the project into different components:
   - We used a controller to interact with the front end. 
@@ -37,8 +32,6 @@ spring.datasource.password = admin1234
 private baseUrl="http://34.121.35.110:8080/surveys";  
 
 private baseUrl2="http://34.121.35.110:8080/new-survey";
-
-![](Aspose.Words.cd5b4e64-da50-41e1-a8a5-ac3317a9f552.002.png)
 
 
 - The remaining components are used internally in the angular application.
@@ -70,18 +63,11 @@ docker build -t gcr.io/my-project-1488083585442/hw3\_frontend .
 
 docker push gcr.io/my-project-1488083585442/hw3\_frontend
 
-- ![](Aspose.Words.cd5b4e64-da50-41e1-a8a5-ac3317a9f552.003.png)Now, to build and push the docker images to the container registry please use the below commands:
-
-
-
-
+- Now, to build and push the docker images to the container registry please use the below commands:
 
 - To connect to the Kubernetes cluster, use the below command:
 
 gcloud container clusters get-credentials hw3cluster --zone us-central1-c --project my-project-1488083585442
-
-![](Aspose.Words.cd5b4e64-da50-41e1-a8a5-ac3317a9f552.004.png)
-
 
 - Now, to deploy the application change the image name (if required) in the YAML files and use the below commands:
 
@@ -98,18 +84,10 @@ kubectl apply -f frontend-deployment.yaml
 kubectl apply -f frontend-service.yaml
 
 
-![](Aspose.Words.cd5b4e64-da50-41e1-a8a5-ac3317a9f552.005.png)
 
+- Validate the above deployment using the command *“kubectl get svc“.* 
 
-
-
-
-
-- Validate the above deployment using the command *“kubectl get svc“.* This gives us a result something like below:
-
-![](Aspose.Words.cd5b4e64-da50-41e1-a8a5-ac3317a9f552.006.jpeg)
-
-- From the above image, use the external IP and port to access the frontend and backend services. In this example, the URLs would look like this:
+- Use the external IP and port to access the frontend and backend services. In this example, the URLs would look like this:
 
 Frontend: <http://34.121.35.110:80>
 
